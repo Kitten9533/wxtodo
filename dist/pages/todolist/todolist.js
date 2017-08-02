@@ -25,8 +25,9 @@ Page({
     todoDesc: '',
     showLoading: false
   },
-  onLoad: function () {
+  onLoad: function (option) {
     let that = this
+    console.log(option)
     this.setData({
       todoList: wx.getStorageSync('todoList') || []
     })
@@ -70,10 +71,15 @@ Page({
         that.setData({
           showLoading: false
         })
-        // wx.navigateBack({})
-        wx.navigateTo({
-          url: '../index/index',
-        })
+        let pages = getCurrentPages()
+        if(pages.length > 1){
+          let prePage = pages[pages.length - 2]
+          prePage.updateList()
+        }
+        wx.navigateBack({})
+        // wx.redirectTo({
+        //   url: '../index/index',
+        // })
       }, 500)
     }).catch(function(e){
       console.log(e)

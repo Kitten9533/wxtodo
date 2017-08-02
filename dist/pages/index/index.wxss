@@ -1,4 +1,5 @@
 /**index.wxss**/
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -21,11 +22,72 @@
   margin-top: 200px;
 }
 
-.button-sp-area{
-    margin: 0 auto;
-    padding-top: 15px;
-    width: 60%;
+.goBtn {
+  margin-top: 50px;
 }
-.mini-btn{
-    margin-right: 5px;
+
+.button-sp-area {
+  margin: 0 auto;
+  padding-top: 15px;
+  width: 60%;
+}
+
+.mini-btn {
+  margin-right: 5px;
+}
+
+.weui-cells::before, .weui-cells::after, .weui-cell::before, .weui-cell::after {
+  border: none;
+  display: none;
+}
+
+.weui-cells {
+  background: #f8f8f8;
+}
+
+.weui-cell {
+  background: #fff;
+}
+
+.weui-form-preview {
+  margin-bottom: 25px;
+}
+
+.weui-form-preview__hd {
+  padding: 5px 15px;
+  line-height: 1.4;
+}
+
+.weui-form-preview__ft {
+  padding: 3px 15px;
+  line-height: 1.4;
+}
+
+.weui-form-preview {
+  margin: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.11), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.weui-form-preview::after, .weui-form-preview::before {
+  display: none;
+  border: none;
+}
+
+.weui-form-preview__hd::after, .weui-form-preview__ft::after {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.weui-form-preview__bd {
+  font-size: 13px;
+  min-height: 56px;
+}
+
+.weui-form-preview__label{
+  font-size: 15px;
+}
+
+.page__ft{
+  font-size: 12px;
 }

@@ -30,9 +30,6 @@ Page({
     })
   },
   onLoad: function () {
-    console.log('onLoad')
-    console.log(common);
-    common.alert();
     var that = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
@@ -41,6 +38,11 @@ Page({
         userInfo:userInfo,
         todoList: wx.getStorageSync('todoList') || []
       })
+    })
+  },
+  updateList () {
+    this.setData({
+      todoList: wx.getStorageSync('todoList') || []
     })
   }
 })
