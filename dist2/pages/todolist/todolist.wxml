@@ -11,7 +11,7 @@
           <view class="weui-label page__desc">事项名称</view>
         </view>
         <view class="weui-cell__bd">
-          <input id="todoName" class="weui-input page__desc" focus="true" placeholder="简单描述待办事项" bindinput="nameChange" value="{{todoName}}"/>
+          <input id="todoName" class="weui-input page__desc" focus="true" placeholder="简单描述待办事项" bindinput="nameChange"/>
         </view>
       </view>
     </view>
@@ -19,7 +19,7 @@
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
         <view class="weui-cell__bd">
-          <textarea id="taksDesc" class="weui-textarea page__desc" placeholder="可以简单记录下想要做什么" style="height: 5.3em" bindinput="descChange"  value="{{todoDesc}}"/>
+          <textarea id="taksDesc" class="weui-textarea page__desc" placeholder="可以简单记录下想要做什么" style="height: 5.3em" bindinput="descChange" />
           <view class="weui-textarea-counter">{{descLen}}/{{maxDescLen}}</view>
         </view>
       </view>

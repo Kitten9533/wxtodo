@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container">
+  <view bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <!-- <view bindtap="toArticle" class="usermotto">
+    <text class="user-motto">toArticle</text>
+  </view>
+  <view bindtap="toPassword" class="usermotto">
+    <text class="user-motto">toPassword</text>
+  </view> -->
+  <!-- <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="i">
+    <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="j">
+      <view wx:if="{{ i <= j}}">
+        {{i}} * {{j}} = {{i * j}}
+      </view>
+    </view>
+  </view> -->
+  <view class="page__bd">
+    <view class="weui-cells__title">带图标、说明、跳转的列表项</view>
+    <view class="weui-cells weui-cells_after-title">
+      <navigator url="" wx:for="{{todoList}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">{{item.todoName}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">{{item.timeStamp}}</view>
+      </navigator>
+    </view>
+  </view>
+  <view bindtap="toPwdList" class="page__bd page__bd_spacing usermotto">
+    <button class="weui-btn" type="primary">Go</button>
+  </view>
+</view>

@@ -91,3 +91,7 @@
 .page__ft{
   font-size: 12px;
 }
+
+.text-indent{
+  text-indent: 20px;
+}

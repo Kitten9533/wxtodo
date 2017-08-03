@@ -21,22 +21,14 @@ Page({
     todoList: [],
     descLen: 0,
     maxDescLen: 200,
-    key: '',
     todoName: '',
     todoDesc: '',
-    timeStamp: '',
     showLoading: false
   },
-  onLoad: function (option) {
+  onLoad: function () {
     let that = this
-    console.log(option)
     this.setData({
-      todoList: wx.getStorageSync('todoList') || [],
-      key: option.key,
-      todoName: option.todoName,
-      todoDesc: option.todoDesc,
-      timeStamp: option.timeStamp,
-      dataLen: !!option.todoDesc ? option.todoDesc.split('').length : 0
+      todoList: wx.getStorageSync('todoList') || []
     })
   },
   nameChange (e) {
@@ -55,19 +47,6 @@ Page({
     this.setData({
       showLoading: true
     })
-    
-    wx.showModal({
-      title: '提示',
-      content: '模态弹窗',
-      success: function (res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-        } else {
-          console.log('用户点击取消')
-        }
-      }
-    })
-
     var that = this
     var p1 = new Promise((resolve, reject) => {
       try{
@@ -91,15 +70,10 @@ Page({
         that.setData({
           showLoading: false
         })
-        let pages = getCurrentPages()
-        if(pages.length > 1){
-          let prePage = pages[pages.length - 2]
-          prePage.updateList()
-        }
-        wx.navigateBack({})
-        // wx.redirectTo({
-        //   url: '../index/index',
-        // })
+        // wx.navigateBack({})
+        wx.navigateTo({
+          url: '../index/index',
+        })
       }, 500)
     }).catch(function(e){
       console.log(e)

@@ -20,7 +20,7 @@
       </navigator>
     </view> -->
 
-    <navigator url="../todolist/todolist?key={{item.key}}" hover-class="weui-cell_active" class="weui-form-preview" wx:for="{{todoList}}" wx:key="item.timeStamp">
+    <navigator url="../todolist/todolist?key={{item.key}}&todoName={{item.todoName}}&todoDesc={{item.todoDesc}}&timeStamp={{item.timeStamp}}" hover-class="weui-cell_active" class="weui-form-preview" wx:for="{{todoList}}" wx:key="item.timeStamp">
       <view class="weui-form-preview__hd">
         <view class="weui-form-preview__item">
           <view class="weui-form-preview__label">{{item.todoName}}</view>
