@@ -27,7 +27,7 @@ Page({
     timeStamp: '',
     showLoading: false
   },
-  onLoad: function (option) {
+  onLoad (option) {
     let that = this
     console.log(option)
     this.setData({
@@ -36,7 +36,7 @@ Page({
       todoName: option.todoName,
       todoDesc: option.todoDesc,
       timeStamp: option.timeStamp,
-      dataLen: !!option.todoDesc ? option.todoDesc.split('').length : 0
+      descLen: !!option.todoDesc ? option.todoDesc.split('').length : 0
     })
   },
   nameChange (e) {

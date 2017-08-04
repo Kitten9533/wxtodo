@@ -1,5 +1,0 @@
-/* pages/pwdlist/pwdlist.wxss */
-.weui-cell__ft_in-access::after{
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-}
