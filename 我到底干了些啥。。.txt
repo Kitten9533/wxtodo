@@ -41,8 +41,20 @@ Task:ÓÃ»§µÄµÇÂ¼ÐèÒªÕËºÅ£¬Ã»ÓÐÔòÐèÒª×¢²á¡£×¢²áÒ³ÃæÐèÒªÌá½»ÊÖ»úºÅºÍÑéÖ¤Âë£¬Ö»ÓÐÑéÖ
 Action:Ê¹ÓÃÁËmui¿ò¼Ü£¬Èí¼þÊ¹ÓÃHBuilderÀ´½øÐÐwebappµÄ¿ª·¢£¬²¢´ò°ü³ÉÏàÓ¦µÄ°²×°°ü¡£´ò¿¨¹ý³ÌÖÐÐèÒª»ñÈ¡µØÀíÎ»ÖÃÔòÍ¨¹ýmuiµÄplus.geolocationÀ´Íê³É¡£
 Result:Ñ§Ï°ÁËmui¿ò¼Ü£¬Íê³ÉÁËÏà¹ØµÄ¹¦ÄÜ£¬´ò°üÉú³ÉµÄappÄÜÔÚiosºÍ°²×¿ÉÏÕý³£ÔËÐÐ¡£
 
-2.±¨±íÏµÍ³Ä£¿é
+2.Í¼ÁéÂòÉÌ³Ç£¬ÉÌ³Ç¹ÜÀíºóÌ¨£¬ÓëÕþ²ÉÔÆ¶Ô½Ó
+Situation:ÉÌ³ÇÒ³ÃæÐèÒªÎ¢µ÷£¬Ê×Ò³Í¼Æ¬»á±»µ±³É¹ã¸æ±»ÆÁ±Î£¬ÉÌ³ÇºóÌ¨ÐèÒª¶Ô½ÓÕþ²ÉÔÆ
+Task:
+Action: 
+Result:
+
+3.Í¼ÁéÂòÉÌ³Ç£¬Í¼ÁéÂò¹ÜÀíºóÌ¨ÉÌÆ·»¯ÏîÄ¿
+Situation:½«×ÔÉíµÄÉÌ³ÇºÍºóÌ¨×÷ÎªÉÌÆ·È¥ÏúÊÛ£¬ËùÒÔÐèÒª½«ÀïÃæµÄÒ³Ãæ¸ÄÎªÍ¨ÓÃ¿ÉÅäÖÃµÄ
+Task: 
+Action: 
+Result:
+
+4.±¨±íÏµÍ³Ä£¿é
 Situation:Ö®Ç°¹«Ë¾Ê¹ÓÃµÄ±¨±íÏµÍ³¹ýÓÚ¾ÃÔ¶£¬ËùÐè¹¦ÄÜÒ²Ô½À´Ô½¶à£¬Òò´ËÐèÒª×Ô¼º¿ª·¢Ò»Ì×ÊÊÓÃÓÚµ±Ç°»·¾³µÄ±¨±íÏµÍ³£¬²¢ÄÜ½«±íÊý¾ÝÍ¨¹ýÍ¼±íµÄÐÎÊ½À´Õ¹ÏÖ¡£
 Task:±¨±íÏµÍ³´óÌåÉÏÓÐ±¨±íÏòµ¼ºÍ±¨±íÕ¹Ê¾À´¹¹³É¡£ÔÚ±¨±íÏòµ¼ÖÐÅäÖÃÏàÓ¦µÄÉ¸Ñ¡Ìõ¼þ£¬´æÈëÊý¾Ý¿â¡£±¨±íÕ¹Ê¾Ê±£¬Í¨¹ý»ñÈ¡µ½µÄÍ¼±íÊý¾ÝºÍÏàÓ¦µÄÍ¼±íÀàÐÍ½øÐÐÊý¾ÝµÄÕ¹Ê¾¡£
-Action:
-Result:
+Action:±¨±íÏòµ¼Ä£¿éÊÇÓÃvue.jsºÍjquery.stepsÀ´Íê³ÉÒ»²½²½µÄÅäÖÃ£¬ÒÔ¼°ÅäÖÃµÄÐ£Ñé¡£Ïòµ¼Õ¹Ê¾Ä£¿é·ÖÎªÉ¸Ñ¡Ìõ¼þ£¬echartÍ¼£¬Êý¾Ý±íÈý²¿·Ö¡£·Ö±ðÊ¹ÓÃvue.js£¬echartsºÍjquery.jqgrid²å¼þÀ´ÊµÏÖÏàÓ¦¹¦ÄÜ¡£
+Result:Íê³ÉÁË±¨±íÏµÍ³Ä£¿é¡£ÄÜ¸ù¾Ý×ÔÉíÑ¡ÔñµÄ±¨±í¶¨ÒåÀ´Õ¹Ê¾²»Í¬µÄ±¨±í£¬²¢ÏÔÊ¾³ÉÖù×´Í¼£¬±ýÍ¼£¬ÕÛÏßÍ¼µÈ¡£

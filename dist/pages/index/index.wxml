@@ -21,7 +21,7 @@
     </view> -->
 
     <navigator url="../todolist/todolist?key={{item.key}}&todoName={{item.todoName}}&todoDesc={{item.todoDesc}}&timeStamp={{item.timeStamp}}" hover-class="weui-cell_active" class="weui-form-preview" wx:for="{{todoList}}" wx:key="item.timeStamp">
-      <view class="weui-form-preview__hd">
+      <view class="weui-form-preview__hd" catchlongtap="longTap">
         <view class="weui-form-preview__item">
           <view class="weui-form-preview__label">{{item.todoName}}</view>
         </view>
@@ -30,10 +30,6 @@
         <view class="weui-form-preview__item">
           <view class="weui-form-preview__label">{{item.todoDesc}}</view>
         </view>
-        <!-- <view class="weui-form-preview__item">
-          <view class="weui-form-preview__label">标题标题</view>
-          <view class="weui-form-preview__value">名字名字名字</view>
-        </view> -->
       </view>
       <view class="weui-form-preview__ft">
         <view class="weui-form-preview__label page__desc page__ft">创建时间：{{item.timeStamp}}</view>

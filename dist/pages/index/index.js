@@ -14,17 +14,17 @@ Page({
     todoList: []
   },
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
-  toArticle: function(){
+  toArticle: function () {
     wx.navigateTo({
       url: '../article/article'
     })
   },
-  toPwdList: function(){
+  toPwdList: function () {
     wx.navigateTo({
       url: '../todolist/todolist'
     })
@@ -32,17 +32,21 @@ Page({
   onLoad: function () {
     var that = this
     //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
+    app.getUserInfo(function (userInfo) {
       //更新数据
       that.setData({
-        userInfo:userInfo,
+        userInfo: userInfo,
         todoList: wx.getStorageSync('todoList') || []
       })
     })
   },
-  updateList () {
+  updateList() {
     this.setData({
       todoList: wx.getStorageSync('todoList') || []
     })
+  },
+  longTap(e) {
+    console.log('longtap')
+    return false
   }
 })

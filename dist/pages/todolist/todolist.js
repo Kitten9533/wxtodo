@@ -27,7 +27,7 @@ Page({
     timeStamp: '',
     showLoading: false
   },
-  onLoad (option) {
+  onLoad(option) {
     let that = this
     console.log(option)
     this.setData({
@@ -39,86 +39,95 @@ Page({
       descLen: !!option.todoDesc ? option.todoDesc.split('').length : 0
     })
   },
-  nameChange (e) {
+  nameChange(e) {
     this.setData({
       todoName: e.detail.value
     })
   },
-  descChange (e) {
+  descChange(e) {
     let len = e.detail.value.split('').length
     this.setData({
       descLen: len,
       todoDesc: e.detail.value
     })
   },
-  submit (e) {
+  submit(e) {
+    var that = this
     this.setData({
       showLoading: true
     })
-    
-    wx.showModal({
-      title: '提示',
-      content: '模态弹窗',
-      success: function (res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-        } else {
-          console.log('用户点击取消')
+    if (!this.data.todoName) {
+      wx.showModal({
+        content: '填写事项名称以保存',
+        showCancel: false,
+        success: function (res) {
+          if (res.confirm) {
+            setTimeout(function () {
+              that.setData({
+                showLoading: false
+              })
+            }, 500);
+          }
         }
-      }
-    })
-
-    var that = this
-    var p1 = new Promise((resolve, reject) => {
-      try{
-        that.setStorage();
-        resolve()
-      } catch (e){
-        reject(e)
-      }
-    })
-    var p2 = new Promise((resolve, reject) => {
-      try {
-        that.initInfo();
-        resolve()
-      } catch (e) {
-        reject(e)
-      }
-    })
-    Promise.all([p1, p2]).then(function(){
-      console.log('保存成功，页面返回')
-      setTimeout(function(){
-        that.setData({
-          showLoading: false
-        })
-        let pages = getCurrentPages()
-        if(pages.length > 1){
-          let prePage = pages[pages.length - 2]
-          prePage.updateList()
+      });
+    }
+    else {
+      var p1 = new Promise((resolve, reject) => {
+        try {
+          that.setStorage();
+          resolve()
+        } catch (e) {
+          reject(e)
         }
-        wx.navigateBack({})
-        // wx.redirectTo({
-        //   url: '../index/index',
-        // })
-      }, 500)
-    }).catch(function(e){
-      console.log(e)
-    })
+      })
+      var p2 = new Promise((resolve, reject) => {
+        try {
+          that.initInfo();
+          resolve()
+        } catch (e) {
+          reject(e)
+        }
+      })
+      Promise.all([p1, p2]).then(function () {
+        setTimeout(function () {
+          that.setData({
+            showLoading: false
+          })
+          let pages = getCurrentPages()
+          if (pages.length > 1) {
+            let prePage = pages[pages.length - 2]
+            prePage.updateList()
+          }
+          wx.navigateBack({})
+        }, 500)
+      }).catch(function (e) {
+        console.log(e)
+      })
+    }
   },
-  setStorage () {
+  setStorage() {
+    let tmpKey = this.data.key
     let todo = {}, todoList = this.data.todoList
     let date = new Date()
-    todo.key = util.setKey(date)
+    if (!!tmpKey) {
+      //编辑
+      todo.key = tmpKey
+      for (let i = 0; i < todoList.length; i++) {
+        if (todoList[i].key === tmpKey) {
+          todoList.splice(i, 1)
+        }
+      }
+    } else {
+      //新建
+      todo.key = util.setKey(date)
+    }
     todo.todoName = this.data.todoName
     todo.todoDesc = this.data.todoDesc
     todo.timeStamp = util.formatTime(date)
     todoList.unshift(todo)
-    // this.setData({
-    //   todoList: todoList
-    // })
     wx.setStorageSync('todoList', todoList)
   },
-  initInfo () {
+  initInfo() {
     this.setData({
       descLen: 0,
       todoName: '',
