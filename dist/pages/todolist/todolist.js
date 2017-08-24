@@ -29,7 +29,6 @@ Page({
   },
   onLoad(option) {
     let that = this
-    console.log(option)
     this.setData({
       todoList: wx.getStorageSync('todoList') || [],
       key: option.key,
@@ -112,7 +111,7 @@ Page({
     if (!!tmpKey) {
       //编辑
       todo.key = tmpKey
-      for (let i = 0; i < todoList.length; i++) {
+      for (let i = 0, len = todoList.length; i < len; i++) {
         if (todoList[i].key === tmpKey) {
           todoList.splice(i, 1)
         }
